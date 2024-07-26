@@ -5,3 +5,5 @@
 * "apollo_map.txt"为apollo工程下的demo地图文件，"lane_segment.txt"为摘取自前者的一条lane的数据。
 ### 绘图
 * 将序列化后的数据格式进行import导入，按照地图层级进行地图可视化绘制。
+
+![map](./map_img.png)
