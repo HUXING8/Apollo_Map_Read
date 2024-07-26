@@ -60,7 +60,6 @@ def draw_stop_line(line_segment, ax, color_val):
     ax.plot(px, py, 'o-', linewidth=1, c=color_val, picker=True)
 
 def draw_polygon(polygon, ax, color_val):
-    # todo(zero): need to fix
     pxy = []
     for point in polygon.point:
       pxy.append([point.x, point.y])
@@ -69,10 +68,11 @@ def draw_polygon(polygon, ax, color_val):
 
 if __name__ == "__main__":
     map_pb = output.map_pb2.Map()
-    res = get_pb_from_text_file("map.txt",map_pb)
+    res = get_pb_from_text_file("apollo_map.txt",map_pb)
 
     fig,ax = plt.subplots()
 
+    # customize your interested data
     for i,lane in enumerate(res.lane):
         draw_lane_central(lane, ax, 'red', alpha_val = 0.5)
         draw_lane_boundary(lane, ax, 'green')
@@ -94,4 +94,5 @@ if __name__ == "__main__":
             draw_stop_line(curve.line_segment, ax, "tomato")
     
     plt.show()
+    # plt.savefig("map_img.png",dpi=200)
 
