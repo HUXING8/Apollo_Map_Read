@@ -1,11 +1,11 @@
-### 转换proto文件
-* 摘取Apollo工程下的/modules/common_msgs/map_msgs的地图proto文件，使用python的`protobuf`库进行序列化。
-### 读取地图文件
-* 地图文件为`.txt`格式，另有其他格式`.xml`,`.bin`文件，需要额外的读取方式。
-* `get_pb_from_text_file()`来自Apollo工程下"modules\tools\common\proto_utils.py"，将.txt数据转化为pb数据。
-* "apollo_map.txt"为apollo工程下的demo地图文件，"lane_segment.txt"为摘取自前者的一条lane的数据。
-### 绘图
-* 将序列化后的数据格式进行import导入，按照地图层级进行地图可视化绘制。
-* 各绘图函数来自Apollo工程下"modules\tools\mapshow\libs\map.py"
+### Convert proto file
+* Extract the map proto file from /modules/common_msgs/map_msgs under the Apollo project, and use the protobuf library in Python for serialization.
+### Read the map file
+* The map file is in the `.txt` format. There are also other format files such as `.xml` and `.bin`, which require additional reading methods.
+* `get_pb_from_text_file()` comes from "modules\tools\common\proto_utils.py" under the Apollo project, which converts the data in .txt format into protobuf (pb) data.
+* "apollo_map.txt" is the demo map file under the Apollo project, and "lane_segment.txt" is the data of one lane extracted from the former.
+### Drawing
+* Import the serialized data format, and perform map visualization drawing according to the map hierarchy.
+* Each drawing function comes from "modules\tools\mapshow\libs\map.py" under the Apollo project.
 
 ![map](./map_img.png)
